@@ -1,68 +1,139 @@
-# CodeIgniter 4 Application Starter
+# 🎓 EduTrack LMS - Learning Management System
 
-## What is CodeIgniter?
+A comprehensive web-based Learning Management System built with CodeIgniter 4 for educational institutions.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## 📋 Project Overview
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+**EduTrack LMS** is designed to facilitate online learning by providing tools for teachers and students to manage courses, assignments, assessments, and communication efficiently.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+### ✨ Key Features
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+- 👥 **User Management** - Role-based access (Admin, Teacher, Student)
+- 🏫 **Classroom Management** - Create and join classes with unique codes
+- 📚 **Learning Materials** - Upload and share educational resources
+- 📝 **Assessment System** - Create and manage quizzes and assignments
+- 📊 **Dashboard & Analytics** - Visual insights and progress tracking
+- 🔔 **Notification System** - Email and in-app notifications
+- 🌍 **Multi-language Support** - English and Malay (expandable)
+- 📱 **Responsive Design** - Works on desktop, tablet, and mobile
 
-## Installation & updates
+## 🛠️ Tech Stack
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+- **Backend**: CodeIgniter 4 (PHP 8.1+)
+- **Database**: MySQL 8.0
+- **Frontend**: Bootstrap 5, Chart.js
+- **Authentication**: CodeIgniter Shield
+- **File Storage**: Local storage with cloud integration (Cloudinary)
+- **Version Control**: Git + GitHub
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+## 📦 Installation
 
-## Setup
+### Prerequisites
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+- PHP 8.1 or higher
+- Composer
+- MySQL 8.0
+- XAMPP/WAMP (for local development)
 
-## Important Change with index.php
+### Setup Instructions
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/fahmize/edutrack_lms.git
+   cd edutrack_lms
+   ```
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+2. **Install dependencies**
+   ```bash
+   composer install
+   ```
 
-**Please** read the user guide for a better explanation of how CI4 works!
+3. **Environment setup**
+   ```bash
+   cp env .env
+   # Edit .env file with your database credentials
+   ```
 
-## Repository Management
+4. **Database setup**
+   ```bash
+   php spark migrate
+   php spark db:seed DatabaseSeeder
+   ```
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+5. **Start development server**
+   ```bash
+   php spark serve
+   ```
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+6. **Open your browser**
+   ```
+   http://localhost:8080
+   ```
 
-## Server Requirements
+## 🗂️ Project Structure
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+```
+edutrack_lms/
+├── app/
+│   ├── Controllers/        # Application controllers
+│   ├── Models/            # Database models
+│   ├── Views/             # View templates
+│   └── Config/            # Configuration files
+├── public/
+│   ├── assets/            # CSS, JS, images
+│   └── uploads/           # File upload directory
+├── writable/              # Cache, logs, sessions
+└── docs/                  # Project documentation
+```
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+## 🏗️ Development Workflow
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+This project follows a 12-week development cycle:
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+- **Weeks 1-2**: Environment setup and database design
+- **Weeks 3-4**: User authentication and role management
+- **Weeks 5-6**: Classroom management and file upload
+- **Weeks 7-8**: Assessment system development
+- **Weeks 9-10**: Dashboard and notification system
+- **Weeks 11-12**: Advanced features and deployment
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## 🤝 Contributing
+
+This is an internship learning project. Contributions and suggestions are welcome!
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 Documentation
+
+- [Development Setup Guide](docs/setup.md)
+- [Database Schema](docs/database.md)
+- [API Documentation](docs/api.md)
+- [Deployment Guide](docs/deployment.md)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Fahmi** - *Full Stack Developer*  
+- GitHub: [@fahmize](https://github.com/fahmize)
+
+## 🙏 Acknowledgments
+
+- CodeIgniter 4 framework
+- Bootstrap 5 for responsive design
+- Chart.js for data visualization
+- All the amazing open-source contributors
+
+---
+
+**📚 Learning Project**: This LMS is built as part of an internship learning experience, focusing on modern web development practices and educational technology.
+
+---
+
+*Last updated: [Current Date]*
